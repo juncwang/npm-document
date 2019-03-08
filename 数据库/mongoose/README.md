@@ -47,17 +47,31 @@ newUser.save()
     .catch(err => {})
 ```
 
+* 删除数据
+```js
+const User = require('./模型地址')
+
+// 根据属性查找一个数据并删除
+User.findOneAndRemove({ att })
+    .then(user => {
+        user.save()
+            .then(user => {})
+            .catch(err => {})
+    })
+    .catch(err => {})
+```
+
 * 修改数据
 ```js
 const User = require('./模型地址')
 const newUser = new User({模型数据})
 
-// 查找一条数据并修改
+// 根据属性查找一条数据并修改
 User.findOneAndUpdate(
-                { _id: req.params.id }, // 根据属性进行查找
-                { $set: newUser }, // 需要更新的数据
-                { new: true }   // 是否是新的
-            )
+    { att }, // 根据属性进行查找
+    { $set: newUser }, // 需要更新的数据
+    { new: true }   // 是否是新的
+)
     .then(user => {})
     .catch(err => {})
 ```
@@ -65,13 +79,13 @@ User.findOneAndUpdate(
 * 查询数据
 ```js
 const User = require('./模型地址')
-const newUser = new User({模型数据})
 
-// 查询一条有以下属性的数据
-User.findOne({varName: varData})
+// 根据属性查询一条有以下属性的数据
+User.findOne(att})
     .then(user => {})
     .catch(err => {})
 
+// 根据 id 查找数据
 User.findById(id)
     .then(user => {})
     .catch(err => {})
