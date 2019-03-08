@@ -36,18 +36,43 @@ const UserSchema = new Schema({
 module.exports = User = mongoose.model('users', UserSchema)
 ```
 
-* 模型保存
+* 添加数据
 ```js
 const User = require('./模型地址')
 const newUser = new User({模型数据})
 
 // 保存新数据
 newUser.save()
-    .then(user => {
-        res.json(user)
-    })
-    .catch(err => console.log(err))
+    .then(user => {})
+    .catch(err => {})
+```
+
+* 修改数据
+```js
+const User = require('./模型地址')
+const newUser = new User({模型数据})
+
+// 查找一条数据并修改
+User.findOneAndUpdate(
+                { _id: req.params.id }, // 根据属性进行查找
+                { $set: newUser }, // 需要更新的数据
+                { new: true }   // 是否是新的
+            )
+    .then(user => {})
+    .catch(err => {})
+```
+
+* 查询数据
+```js
+const User = require('./模型地址')
+const newUser = new User({模型数据})
 
 // 查询一条有以下属性的数据
 User.findOne({varName: varData})
+    .then(user => {})
+    .catch(err => {})
+
+User.findById(id)
+    .then(user => {})
+    .catch(err => {})
 ```
