@@ -59,6 +59,15 @@ User.findOneAndRemove({ att })
             .catch(err => {})
     })
     .catch(err => {})
+
+// 根据 id 查找一个数据并删除
+User.findByIdAndRemove(id)
+    .then(user => {
+        user.save()
+            .then(user => {})
+            .catch(err => {})
+    })
+    .catch(err => {})
 ```
 
 * 修改数据
@@ -69,6 +78,15 @@ const newUser = new User({模型数据})
 // 根据属性查找一条数据并修改
 User.findOneAndUpdate(
     { att }, // 根据属性进行查找
+    { $set: newUser }, // 需要更新的数据
+    { new: true }   // 是否是新的
+)
+    .then(user => {})
+    .catch(err => {})
+
+// 根据 id 查找一条数据并修改
+User.findByIdAndUpdate(
+    id, // 根据 id 进行查找
     { $set: newUser }, // 需要更新的数据
     { new: true }   // 是否是新的
 )
