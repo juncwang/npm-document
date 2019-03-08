@@ -35,6 +35,7 @@ const router = express.Router()
 // 可以有其他方法 比如 post pull delete
 // req 为客户端发送的信息
 // res 为发送给客户端的信息
+// 访问路径为 地址 + app.use('/path',router) + '/test/
 router.get('/test', (req,res) => {
     res.send("users api test success")
 })

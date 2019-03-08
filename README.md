@@ -25,7 +25,13 @@
     * `nodemon` 后台服务程序 (调试后台程序使用)
     * `express` node 的一个网络框架
     * `body-parser` 解析 body 的工具
+    
+* 加密
+    * `jsonwebtoken` 生成解析token
     * `md5` 字符串加密
 
 * 数据库
     * `mongoose` 链接 `mongoDB` 数据库使用
+
+* 其他
+    * `gravatar` 全球公认头像库
