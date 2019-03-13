@@ -28,6 +28,7 @@
     
 * 加密
     * `jsonwebtoken` 生成解析token
+    * `jwt-decode` 解析 token
     * `md5` 字符串加密
 
 * 数据库
@@ -35,3 +36,10 @@
 
 * 其他
     * `gravatar` 全球公认头像库
+
+* 前端框架
+    * `vuejs` vue 框架 
+        * `axios` 请求工具
+        * `router` 路由
+        * `vuex` 数据存储
+        * `elements-ui` UI 框架
