@@ -17,6 +17,8 @@ import axios from 'axios'
 
 // 发出请求时拦截
 axios.interceptors.request.use(config => {
+    // 设置请求头
+    config.headers.xxx = strVar
     // ********
     // 拦截请求时, 想要执行的语句
     // config 为配置文件
@@ -34,6 +36,14 @@ axios.interceptors.response.use(response => {
     // ********
     return response
 }, error => {
+    // 获取错误状态码
+    const { status } = error.response
+    if(status == 401){
+        Message.error('token 失效')
+        localStorage.removeItem('eleToken')
+        router.push('/login')
+    }
+
     return Promise.reject(error)
 })
 

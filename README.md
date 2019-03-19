@@ -43,3 +43,8 @@
         * `router` 路由
         * `vuex` 数据存储
         * `elements-ui` UI 框架
+
+* 其他方法
+    * 浏览器对象
+        * `localStorage` 本地存储对象
+            * `setItem('strName', var)` 设置一个储存在本地浏览器的值
