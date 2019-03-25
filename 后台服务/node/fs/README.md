@@ -72,3 +72,22 @@ fs.exists('stuff', (exists) => {
 })
 
 ```
+
+* 输入输出流
+```js
+const fs = require('fs')
+
+const fsReadStream = fs.createReadStream(__dirname + '/xxx.tex', 'utf8')
+const fsWriteStream = fs.createWriteStream(__dirname + '/xxx2.txt', 'utf8')
+
+// 使用管道触发输入
+fsReadStream.pipe(fsWriteStream)
+
+// 使用事件触发输入
+// let num = 0
+// fsReadStream.on('data', (data) => {
+//     num++;
+//     console.log(`==============读取第 ${num} 次=================`)
+//     fsWriteStream.write(data)
+// })
+```

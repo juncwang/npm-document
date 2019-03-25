@@ -19,3 +19,22 @@ server.listen(8888, '127.0.0.1', () => {
     console.log('Server On Running Is Port : 8888')
 })
 ```
+
+* 使用文件流写入http接口
+```js
+const fs = require('fs')
+const http = require('http')
+
+const fsReadStream = fs.createReadStream(__dirname + '/xxx.tex', 'utf8')
+
+const server = http.createServer((req, res)=>{
+    res.writeHead(200, {'Content-type':"text/plain"})
+    // 展示 html 页码
+    // res.writeHead(200, {'Content-type':"text/html"})
+    // 展示 json 数据
+    // res.writeHead(200, {'Content-type':"application/json"})
+    fsReadStream.pipe(res)
+})
+
+server.listen(5000, ()=>{})
+```
