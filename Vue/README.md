@@ -32,7 +32,7 @@ devServer: {
                 ws: true,   // 是否实现跨域
                 changOrigin: true,  
                 pathRewrite: {  // 路径重写
-                    '^/api' : 'http//localhost:5000/api/'
+                    '^/api' : ''
                 }
             }
         },
