@@ -8,6 +8,8 @@
     * `import axios from 'axios'` 全局引入
     * `axios.defaults.headers.common['token'] = 'f4c902c9ae5a2a9d8f84868ad064e706'` 配置头文件内的 token
     * `axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'` 配置头文件内的 content-type
+    * `axios.defaults.baseURL = process.env.VUE_APP_BASE_URI` 基础地址
+    * `axios.defaults.timeout = 5000` 请求超时时间
     * `Vue.prototype.$axios = axios` 把 axios 给予 vue
 
 * 使用 axios 拦截请求

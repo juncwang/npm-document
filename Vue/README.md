@@ -84,6 +84,25 @@
       }
       ```
 
+09. 定义组件后在组件内插入内容
+```xml
+<!-- 定义组件时写法 -->
+<template>
+    <div class="comName">
+        <slot></slot>
+    </div>
+</template>
+
+<!-- 使用时写法 -->
+<template>
+    <div class="otherComName">
+        <comName>
+            <!-- 这里写需要插入 comName 的内容 -->
+        </comName>
+    </div>
+</template>
+```
+
 
 
 ### Vue 2.X

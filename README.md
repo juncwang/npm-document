@@ -25,6 +25,7 @@
     * `nodemon` 后台服务程序 (调试后台程序使用)
     * `express` node 的一个网络框架
     * `body-parser` 解析 body 的工具
+    * `connect-multiparty` 上传文件
     
 * 加密
     * `jsonwebtoken` 生成解析token
@@ -43,7 +44,8 @@
         * `router` 路由
         * `vuex` 数据存储
         * `elements-ui` UI 框架
-
+        * `better-scroll` UI 滑动组件
+        
 * 其他方法
     * 浏览器对象
         * `localStorage` 本地存储对象
