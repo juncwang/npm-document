@@ -54,6 +54,42 @@ const router = require('./router/path')
 app.use('/api/user', router)
 ```
 
+* 文件操作
+```js
+// 文件上传
+// 改功能需用到插件connect-multiparty
+const multiparty = require('connect-multiparty')
+const multipartyMiddeware = multiparty()
+
+router.post('/upload', multipartyMiddeware, (req, res) => {
+    console.log(req.files)
+
+    // 通过文件上传后路径获取文件名
+    let filesData = req.files.file.path.split('\\')
+    let outPath = filesData[filesData.length - 1]
+    // 将文件保存在自定义路径内
+    var source = fs.createReadStream(req.files.file.path);
+    var dest = fs.createWriteStream('./updata/' + outPath);
+    source.pipe(dest)
+    // 删除上传到临时文件夹内的文件
+    source.on('end', function () { fs.unlinkSync(req.files.file.path); });   //delete
+    source.on('error', function (err) { });
+
+    res.json({ msg: 'success' })
+})
+
+// 文件下载
+router.get('/downdata/:fileName', (req, res) => {
+    res.download('./updata/' + req.params.fileName)
+    // res.json({msg: 'hello world'})
+})
+
+// 图片显示
+router.get('/htmlimg/:fileName', (req, res) => {
+    const rs = fs.createReadStream('./updata/' + req.params.fileName);//获取图片的文件名
+    rs.pipe(res);
+})
+```
 * req 及 res 对象
 
 Request 对象 - request 对象表示 HTTP 请求，包含了请求查询字符串，参数，内容，HTTP 头部等属性。常见属性有：

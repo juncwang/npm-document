@@ -22,6 +22,9 @@
 
 * 后台服务
     * `node` 后台服务程序
+        * `events` 事件
+        * `file` 文件
+        * `http` 服务
     * `nodemon` 后台服务程序 (调试后台程序使用)
     * `express` node 的一个网络框架
     * `body-parser` 解析 body 的工具

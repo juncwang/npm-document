@@ -38,3 +38,28 @@ router.post('/upload', multipartyMiddeware, (req, res) => {
     res.json({msg: 'success'})
 })
 ```
+
+```js
+// 前端上传方法
+let files = [...input.files]
+let file = files[0]
+let formdata = new FormData()
+formdata.append('file',file)
+formdata.append('submit',false)
+let config = {
+    headers: {
+        'Content-Type': 'multipart/form-data'
+    }
+}
+this.$axios.post('/api/files/upload', formdata, config)
+    .then(res => {
+        // console.log(res.data)
+        if(this.imgs.length > 0){
+            console.log(this.imgs.length)
+            this.uploadfile()
+            
+        }else{
+            console.log('hello world')
+        }
+    })
+```
