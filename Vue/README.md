@@ -6,6 +6,23 @@
 * 创建工程
     * `vue create projectName`
 
+* 生产环境 nginx 服务器配置解决跨域及页面跳转问题
+```conf
+# 添加访问目录为/apis的代理配置
+# VUE 生产环境访问地址需改为 /apis
+location /apis { 
+    rewrite  ^/apis/(.*)$ /$1 break;
+    proxy_pass   http://192.168.78.113:5000;
+}
+
+location / {
+    root   html;
+    index  index.html index.htm;
+    # 解决路径跳转问题
+    try_files $uri $uri/ /index.html;
+}
+```
+
 01. vue 3.x 安装方式
    * 访问网页 `https://github.com/vuejs/vue-cli` 
       * 进入网页后找到 `docs` 文件夹并进入
