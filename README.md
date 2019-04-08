@@ -25,6 +25,10 @@
         * `events` 事件
         * `file` 文件
         * `http` 服务
+        * `request` 发起请求
+        * `child_process` 多线程
+        * `os` 系统
+        * `path` 路径
     * `nodemon` 后台服务程序 (调试后台程序使用)
     * `express` node 的一个网络框架
     * `body-parser` 解析 body 的工具

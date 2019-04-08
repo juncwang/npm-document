@@ -14,3 +14,7 @@
     * `events` 事件模块
     * `fs` 文件模块
     * `http` 网络服务模块
+    * `request` 发起请求
+    * `child_process` 多线程
+    * `os` 系统
+    * `path` 路径
