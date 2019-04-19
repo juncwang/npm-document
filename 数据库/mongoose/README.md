@@ -155,3 +155,8 @@ User.findById(id)
     .then(user => {})
     .catch(err => {})
 ```
+
+* 获取数据 id 的方法
+```js
+user._id.toHexString()
+```
