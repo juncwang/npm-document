@@ -19,7 +19,7 @@
     * 创建用户
         1. `use admin`
         2. `db.auth("user","pwd")`
-        3. 系统管理员 `db.createUser({user:"admin",pwd:"admin",roles:[{role:"userAdminAnyDatabase",db:"admin"}` 
+        3. 系统管理员 `db.createUser({user:"admin",pwd:"admin",roles:[{role:"userAdminAnyDatabase",db:"admin"}]})` 
         4. 数据管理员 `db.createUser({user:"user",pwd:"pwd",roles:[{role:"readWrite",db:"dbName"}]})`
         5. 删除管理员 `db.dropUser("user")`
     * 查看集合 `show dbs`
