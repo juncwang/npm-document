@@ -33,6 +33,7 @@
     * `express` node 的一个网络框架
     * `body-parser` 解析 body 的工具
     * `connect-multiparty` 上传文件
+    * `exceljs` 表格创建
     
 * 加密
     * `jsonwebtoken` 生成解析token
