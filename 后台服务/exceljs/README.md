@@ -89,4 +89,12 @@ workbook.xlsx.writeFile("first.xlsx").then(function() {
     console.log("saved");
 });
 
+
+// read from a file
+var workbook = new Excel.Workbook();
+workbook.xlsx.readFile(filename)
+    .then(function() {
+        // use workbook
+    });
+
 ```
