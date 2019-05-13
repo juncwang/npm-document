@@ -34,7 +34,7 @@
         * `node-fetch` node 使用的 fetch
     * `nodemon` 后台服务程序 (调试后台程序使用)
     * `express` node 的一个网络框架
-    * `koa` express 的一个升级网络框架
+    * `koa2` express 的一个升级网络框架
     * `body-parser` 解析 body 的工具
     * `connect-multiparty` 上传文件
     * `exceljs` 表格创建
