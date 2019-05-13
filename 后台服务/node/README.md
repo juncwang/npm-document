@@ -18,3 +18,6 @@
     * `child_process` 多线程
     * `os` 系统
     * `path` 路径
+    * `util` 工具包
+    * `co` 生成迭代器
+    * `node-fetch` node 使用的 fetch
