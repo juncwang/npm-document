@@ -57,6 +57,7 @@
         * `vuex` 数据存储
         * `elements-ui` UI 框架
         * `better-scroll` UI 滑动组件
+        * `高德地图` 地图工具
         
 * 其他方法
     * 浏览器对象
