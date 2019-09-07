@@ -33,6 +33,7 @@
         * `co` 生成迭代器
         * `node-fetch` node 使用的 fetch
     * `nodemon` 后台服务程序 (调试后台程序使用)
+    * `nodejs-websocket` 用于创建webSocket
     * `express` node 的一个网络框架
     * `koa` express 的一个升级网络框架
     * `body-parser` 解析 body 的工具
@@ -63,3 +64,15 @@
     * 浏览器对象
         * `localStorage` 本地存储对象
             * `setItem('strName', var)` 设置一个储存在本地浏览器的值
+        * `WebSocket` 实时通信
+            * 初始化 websocket `var ws = new WebSocket('ws:url')`
+            * 服务器连接成功事件 `ws.onopen = () => { ... ... }`
+            * 服务器接收数据事件 `ws.onmessage = (e) => { ... ... }` e.data 是服务器返回的数据
+            * 服务器关闭事件 `ws.onclose = () => { ... ... }`
+        * `navigator.mediaDevices.getUserMedia(constranints)` 打开摄像头及录音
+            * 返回一个 `Promise` 对象
+                * 成功调用 `.then( stream => {})` 视频音频流, 给到 video audio 标签的 srcObject 属性上实现播放
+                * 失败调用 `.catch( err => {})` 错误信息
+            * `constranints` 为一个对象
+                * `{audio: true, video: true}` 默认两个都是打开
+                * `{video: {width: 1280, height: 720}}` 设置视频的宽高比
