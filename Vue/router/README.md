@@ -251,3 +251,30 @@
    * `<router-link v-bind:to="'/blog/' + id"></router-link>` 将 id 传入路径
 * 页面获取 id 方式
    * `this.$route.params.id` 通过 route.params 获取参数值
+   
+   
+### params传递参数
+注：使用params传参只能使用name进行引入
+```js
+使用params传参
+//params传参 使用name
+this.$router.push({
+  name:'second',
+  params: {
+    id:'20180822',
+     name: 'query'
+  }
+})
+
+//params接收参数
+this.id = this.$route.params.id ;
+this.name = this.$route.params.name ;
+
+//路由
+
+{
+path: '/second/:id/:name',
+name: 'second',
+component: () => import('@/view/second')
+}
+```
