@@ -278,3 +278,29 @@ name: 'second',
 component: () => import('@/view/second')
 }
 ```
+
+### query传递参数
+我看了很多人都说query传参要用path来引入，params传参要用name来引入，只是我测试了一下，query使用name来引入也可以传参，使用path也可以。如果有人知道原因可以告诉我一下，谢谢！
+```js
+//query传参，使用name跳转
+this.$router.push({
+    name:'second',
+    query: {
+        queryId:'20180822',
+        queryName: 'query'
+    }
+})
+
+//query传参，使用path跳转
+this.$router.push({
+    path:'second',
+    query: {
+        queryId:'20180822',
+        queryName: 'query'
+    }
+})
+
+//query传参接收
+this.queryName = this.$route.query.queryName;
+this.queryId = this.$route.query.queryId;
+```
